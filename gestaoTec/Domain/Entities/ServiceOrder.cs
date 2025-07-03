@@ -8,5 +8,6 @@ namespace gestaoTec.Domain.Entities
 {
     internal class ServiceOrder
     {
+        public int MyProperty { get; set; }
     }
 }

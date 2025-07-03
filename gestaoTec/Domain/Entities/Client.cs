@@ -18,7 +18,11 @@ namespace gestaoTec.Domain.Entities
 
         public string Address { get; set; }
 
-        // conceito de Invariantes 
+        #region Properties navigation
+        public Equipment? Equipment { get; set; }
+        #endregion Properties navigation
+
+        // conceito de Invariantes : garatir que o objeto sempre estará em um estado válido
         // esse metodo é chamado de Factory Method 
         public static Client Create ( String name , string email, string address , Guid clientID)
         {
