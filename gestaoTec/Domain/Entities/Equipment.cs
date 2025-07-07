@@ -11,17 +11,19 @@ namespace gestaoTec.Domain.Entities
     {
 
         public Guid EquipementID { get; set; }
-        public string EquipName { get; set; }
-        public string EquipType { get; set; }
+        public required string EquipName { get; set; }
+        public required string EquipType { get; set; }
 
-        public string EquipmentModel  { get; set; }
-        public string EquipmentMark { get; set; }
+        public string? EquipmentModel  { get; set; }
+        public string? EquipmentMark { get; set; }
         public int EquipSerie { get; set; }
+
+        public  required Client client { get; set; }
 
 
         // Metodo para garantir que o objeto sempre estará em um estado válido
         // metodo para criar o objeto com o modelo exato que deve ser criado
-        public static Equipment Create( string equipName, string equipType, string equipmentModel, string equipmentMark,int equipSerie, Guid equipementID)
+        public static Equipment Create( string equipName, string equipType, string equipmentModel, string equipmentMark,int equipSerie, Guid equipementID, Client client)
         {
             if (string.IsNullOrWhiteSpace(equipName))
             {
@@ -34,7 +36,9 @@ namespace gestaoTec.Domain.Entities
                 EquipType = equipType,
                 EquipmentModel = equipmentModel,
                 EquipmentMark = equipmentMark,
-                EquipSerie = equipSerie
+                EquipSerie = equipSerie,
+                client = client
+
             };
         }
 

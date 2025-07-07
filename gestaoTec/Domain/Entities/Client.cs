@@ -11,15 +11,17 @@ namespace gestaoTec.Domain.Entities
     internal class Client
     {
         public  Guid ClientId { get; set; }
-        public string Name { get; set; }
+        public  required string Name { get; set; }
 
         public int Number { get; set; }
-        public string  Email { get; set; }
+        public required string  Email { get; set; }
 
-        public string Address { get; set; }
+        public required  string Address { get; set; }
 
         #region Properties navigation
-        public Equipment? Equipment { get; set; }
+        public ICollection<Equipment>? Equipments { get; set; } = new List<Equipment>();
+
+        public ICollection<ServiceOrder>? ServiceOrders { get; set; } = new List<ServiceOrder>();
         #endregion Properties navigation
 
         // conceito de Invariantes : garatir que o objeto sempre estará em um estado válido
