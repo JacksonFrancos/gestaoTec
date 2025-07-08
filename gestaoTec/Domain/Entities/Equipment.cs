@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestaoTec.Domain.Entities
 {
-    internal class Equipment
+    public class Equipment
 
     {
 

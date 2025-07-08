@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace gestaoTec.Domain.Entities
 {
-    internal class Client
+    public class Client
     {
         public  Guid ClientId { get; set; }
         public  required string Name { get; set; }

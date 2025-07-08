@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestaoTec.Domain.Enums
 {
-  enum OsStatusEnum
+  public enum OsStatusEnum
     {
         Open,
         InProgress,

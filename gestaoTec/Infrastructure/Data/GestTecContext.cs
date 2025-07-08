@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace gestaoTec.Infrastructure.Data
 {
     // classe criada para poder fazer a conexção com o banco de dados
-    internal class GestTecContext(DbContextOptions<GestTecContext>options) : DbContext (options)
+    public class GestTecContext(DbContextOptions<GestTecContext>options) : DbContext (options)
     {
      public DbSet<Client> CLients  { get; set; }
     public DbSet<Equipment> Equipments { get; set; }

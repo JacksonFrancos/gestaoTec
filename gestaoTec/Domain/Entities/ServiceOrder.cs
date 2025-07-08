@@ -9,7 +9,7 @@ using gestaoTec.Domain.Enums;
 
 namespace gestaoTec.Domain.Entities
 {
-    internal class ServiceOrder
+    public class ServiceOrder
     {
         public  required string  ProblemDescription { get; set; }
         public DateTime InitialData { get; set; } = DateTime.Now;
