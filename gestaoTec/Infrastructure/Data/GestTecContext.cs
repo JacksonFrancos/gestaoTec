@@ -11,7 +11,7 @@ namespace gestaoTec.Infrastructure.Data
     // classe criada para poder fazer a conexção com o banco de dados
     public class GestTecContext(DbContextOptions<GestTecContext>options) : DbContext (options)
     {
-     public DbSet<Client> CLients  { get; set; }
+     public DbSet<Client> Clients  { get; set; }
     public DbSet<Equipment> Equipments { get; set; }
     public DbSet<ServiceOrder> ServiceOrders { get; set; }
     }

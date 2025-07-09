@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace gestaoTec.Application.Services.Iservices
 {
-    internal class IclientService
+    public class IclientService
     {
+
+       Task<> SaveAsync(Client client);
+
+       Task<> DeleteAsync(Client client);
+
+       Task<> ListAsync (CancellationToken token = default);
     }
 }
