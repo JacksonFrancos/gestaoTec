@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using gestaoTec.Application.Services.Iservices;
 using gestaoTec.Domain.Entities;
 using gestaoTec.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace gestaoTec.Application.Services.Impls
 {
-    public class ClientService
+    public class ClientService : IclientService
     {
         private GestTecContext Database { get; }
 
