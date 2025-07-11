@@ -24,10 +24,11 @@ namespace gestaoTec.Domain.Entities
         public ICollection<ServiceOrder>? ServiceOrders { get; set; } = new List<ServiceOrder>();
         #endregion Properties navigation
 
-        // conceito de Invariantes : garatir que o objeto sempre estará em um estado válido
+        
         // esse metodo é chamado de Factory Method 
         public static Client Create ( String name , string email, string address , Guid clientID)
         {
+            // conceito de Invariantes : garatir que o objeto sempre estará em um estado válido
             if (string.IsNullOrWhiteSpace(name))
             {
                 throw new ArgumentException("O nome não pode ser nullo", nameof(name));

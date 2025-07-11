@@ -21,8 +21,8 @@ namespace gestaoTec.Domain.Entities
         public  required Client client { get; set; }
 
 
-        // Metodo para garantir que o objeto sempre estará em um estado válido
-        // metodo para criar o objeto com o modelo exato que deve ser criado
+        // Metodo para garantir que o objeto sempre estará em um estado válido : invariantes
+        // metodo para criar o objeto com o modelo exato que deve ser criado : factory method
         public static Equipment Create( string equipName, string equipType, string equipmentModel, string equipmentMark,int equipSerie, Guid equipementID, Client client)
         {
             if (string.IsNullOrWhiteSpace(equipName))

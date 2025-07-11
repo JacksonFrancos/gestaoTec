@@ -11,24 +11,57 @@ namespace gestaoTec.Application.Commons.Results
 
         public T? Data { get; }
         public IEnumerable<Error> Erros { get; } = Enumerable.Empty<Error>();
-
-        public bool 
-        //public bool IsSucess { get; }
-        //public string Error { get; }
+        public bool Valid => !Erros.Any();
 
 
-        //public bool IsFailure => !IsSucess;
+        // esse construc é usado somente para quando tiver "dados"
+        internal Result(T data)
+        {
+            Data = data;
+        }
 
-        //protected  Result(bool isSuccess, string error)
-        //{
-        //    IsSucess = isSuccess;
-        //    Error = error;
-        //}
 
-        //public static Result Success() =>  new Result(true, string.Empty);
+        // esse construc é usado  para quando tiver  "dados" e "erros"
+        internal Result (T data, IEnumerable<Error> erros)
+        {
+            Data = data;
+            Erros = erros;
+        }
 
-        //public static Result Failure(string error) => new Result(false, error);
+        // somente para listar os erros
+        internal Result(IEnumerable<Error> erros)
+        {
+            Erros = erros;
+        }
 
+
+        // usado para declarar novos erros, quando eu n tiver o erro listado
+        internal Result(Error erro)
+        {
+            Erros = new[] { erro };
+        }
+
+    }
+
+    public sealed class Result
+    {
+
+        public IEnumerable<Error> Errors { get; } = Enumerable.Empty<Error>();
+
+        public bool Valid => Errors == null || !Errors.Any();
+
+        internal Result()
+        {
+        }
+        internal Result(IEnumerable<Error> errors)
+        {
+            Errors = errors;
+        }
+
+        public static Result Ok()
+        {
+            return new Result();
+        }
 
     }
 }
