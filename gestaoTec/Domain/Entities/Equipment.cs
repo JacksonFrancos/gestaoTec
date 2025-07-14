@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 namespace gestaoTec.Domain.Entities
 {
     public class Equipment
-
     {
-
-        public Guid EquipementID { get; set; }
+        public Guid EquipmentID { get; set; }
         public required string EquipName { get; set; }
         public required string EquipType { get; set; }
 
         public string? EquipmentModel  { get; set; }
         public string? EquipmentMark { get; set; }
         public int EquipSerie { get; set; }
+        public Guid ClientId { get; set; }
 
-        public  required Client client { get; set; }
+        public  required Client Client { get; set; }
+        public ICollection<ServiceOrder>? ServiceOrders { get; set; } = new List<ServiceOrder>();
 
 
         // Metodo para garantir que o objeto sempre estará em um estado válido : invariantes
         // metodo para criar o objeto com o modelo exato que deve ser criado : factory method
-        public static Equipment Create( string equipName, string equipType, string equipmentModel, string equipmentMark,int equipSerie, Guid equipementID, Client client)
+        public static Equipment Create( string equipName, string equipType, string equipmentModel, string equipmentMark,int equipSerie, Guid equipmentid, Client client)
         {
             if (string.IsNullOrWhiteSpace(equipName))
             {
@@ -31,13 +31,13 @@ namespace gestaoTec.Domain.Entities
             }
             return new Equipment
             {
-                EquipementID = equipementID,
+                EquipmentID = equipmentid,
                 EquipName = equipName,
                 EquipType = equipType,
                 EquipmentModel = equipmentModel,
                 EquipmentMark = equipmentMark,
                 EquipSerie = equipSerie,
-                client = client
+                Client = client
 
             };
         }

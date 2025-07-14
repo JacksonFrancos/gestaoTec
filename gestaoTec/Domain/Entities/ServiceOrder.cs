@@ -21,6 +21,8 @@ namespace gestaoTec.Domain.Entities
         public required string Observation { get; set; }
 
         public DateTime ConcluidData { get; set; } = DateTime.Now;
+        public Guid ClientId { get; set; }
+       
 
         public required  Client Client { get; set; }
         public required Equipment Equipment { get; set; }

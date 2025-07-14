@@ -10,6 +10,9 @@ namespace gestaoTec.Domain.Entities
 {
     public class Client
     {
+
+        public Client() {}
+
         public  Guid ClientId { get; set; }
         public  required string Name { get; set; }
 
@@ -23,6 +26,8 @@ namespace gestaoTec.Domain.Entities
 
         public ICollection<ServiceOrder>? ServiceOrders { get; set; } = new List<ServiceOrder>();
         #endregion Properties navigation
+
+
 
         
         // esse metodo é chamado de Factory Method 

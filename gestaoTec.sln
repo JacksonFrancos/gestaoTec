@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gestaoTec", "gestaoTec\gestaoTec.csproj", "{61286F27-390C-4CF7-B631-B750E25C8AB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{760A8DAF-1C51-434D-902B-C8774C3FB481}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19391ED8-6E4C-43B2-89A2-DB4E1C12AE53} = {19391ED8-6E4C-43B2-89A2-DB4E1C12AE53}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUi", "WebUi\WebUi.csproj", "{19391ED8-6E4C-43B2-89A2-DB4E1C12AE53}"
 EndProject

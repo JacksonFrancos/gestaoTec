@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace gestaoTec.Application.Models
 {
-    public  record Client (string Name , string Address , string Email, int Number , Guid ClientId);
+    public  record ClientResponse (string Name , string Address , string Email, int Number , Guid ClientId);
 
     public record SaveClient (
         Guid ClientId,
