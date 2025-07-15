@@ -11,6 +11,7 @@ namespace WebApi.Controllers
     [ApiController]
     public class ClientController : Controller
     {
+
         [HttpPost]
 
         public async Task<IActionResult> Save(
@@ -18,18 +19,8 @@ namespace WebApi.Controllers
             [FromBody] SaveClient model,
             CancellationToken token = default)
         {
-            var client = Client.Create(
-           model.Name,
-           model.Email,
-           model.Address,
-           model.ClientId
-           );
-         client.Number = model.Number;
-         var result = await service.SaveAsync(client);
-
-
-            return Ok(result);
-
+         var result = await service.SaveAsync(model);
+         return Ok(result);
         }
 
 
