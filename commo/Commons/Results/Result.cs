@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gestaoTec.Application.Commons.Results
+namespace commo.Commons.Results
 {
     public class Result<T> 
     {
@@ -61,6 +61,11 @@ namespace gestaoTec.Application.Commons.Results
         public static Result Ok()
         {
             return new Result();
+        }
+
+        public static Result Fail(Error error)
+        {
+            return new Result(new[] { error });
         }
 
     }
