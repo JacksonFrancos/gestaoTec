@@ -1,16 +1,17 @@
-﻿@page "/clientes/cadastro"
-@inherits CadastroClienteBase
-@using WebUI.Models
+﻿@page "/clients/create"
+@inherits CreateBase
 @using MudBlazor
+@using WebUi.Services.Interface
+@using YourAppNamespace.Pages.Clients
+@inject ISnackbar Snackbar
 
-<MudPaper Class="p-4 mx-auto" Style="max-width:500px">
-    <MudText Typo="Typo.h5">Cadastro de Cliente</MudText>
+<MudPaper Class="pa-4 mx-auto mt-6" MaxWidth="500px">
+    <MudText Typo="Typo.h5" GutterBottom="true">Cadastro de Cliente</MudText>
 
-    <EditForm Model="_cliente" OnValidSubmit="SalvarCliente">
-        <MudTextField Label="Nome" @bind-Value="_cliente.Nome" Required="true" />
-        <MudTextField Label="Email" @bind-Value="_cliente.Email" Required="true" />
-        <MudTextField Label="Telefone" @bind-Value="_cliente.Telefone" Required="true" />
+    <MudTextField Label="Nome" @bind-Value="Name" Required="true" />
+    <MudTextField Label="Endereço" @bind-Value="Address" Required="true" />
+    <MudTextField Label="Email" @bind-Value="Email" Required="true" />
+    <MudNumericField T="int" Label="Número" @bind-Value="Number" />
 
-        <MudButton Type="Submit" Color="Color.Primary" Class="mt-2">Salvar</MudButton>
-    </EditForm>
+    <MudButton OnClick="CreateClient" Variant="Variant.Filled" Color="Color.Primary" Class="mt-4">Salvar</MudButton>
 </MudPaper>

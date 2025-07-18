@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using gestaoTec.Application.Commons.Results;
+using commo.Commons.Results;
 using gestaoTec.Application.Models;
 using gestaoTec.Domain.Entities;
 
