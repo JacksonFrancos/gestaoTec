@@ -1,0 +1,13 @@
+# Ignore pastas de build da WebApi
+/WebApi/wwwroot/
+!/WebApi/wwwroot/index.html
+!/WebApi/wwwroot/favicon.ico
+
+# Ignora arquivos de build
+/WebApi/wwwroot/
+/bin/
+/obj/
+
+# Pastas de publicação
+publish-temp/
+publish/
