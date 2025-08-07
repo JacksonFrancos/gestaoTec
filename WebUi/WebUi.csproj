@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Home\**" />
+    <Content Remove="Pages\Home\**" />
+    <EmbeddedResource Remove="Pages\Home\**" />
+    <None Remove="Pages\Home\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Counter.razor" />
+    <Content Remove="Pages\Weather.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.15" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.15" PrivateAssets="all" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />

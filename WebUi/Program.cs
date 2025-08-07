@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using WebUi;
 using WebUi.Services.Impl;
 using Microsoft.Extensions.DependencyInjection;
+using MudBlazor.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
+builder.Services.AddMudServices();
 
 builder.Services.AddScoped<ClientService>();
 builder.Services.AddHttpClient<ClientService>(client =>

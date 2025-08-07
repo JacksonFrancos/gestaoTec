@@ -2,16 +2,7 @@
 @inherits CreateBase
 @using MudBlazor
 @using WebUi.Services.Interface
-@using YourAppNamespace.Pages.Clients
-@inject ISnackbar Snackbar
+@using WebUi.Pages.Client
 
-<MudPaper Class="pa-4 mx-auto mt-6" MaxWidth="500px">
-    <MudText Typo="Typo.h5" GutterBottom="true">Cadastro de Cliente</MudText>
 
-    <MudTextField Label="Nome" @bind-Value="Name" Required="true" />
-    <MudTextField Label="Endereço" @bind-Value="Address" Required="true" />
-    <MudTextField Label="Email" @bind-Value="Email" Required="true" />
-    <MudNumericField T="int" Label="Número" @bind-Value="Number" />
 
-    <MudButton OnClick="CreateClient" Variant="Variant.Filled" Color="Color.Primary" Class="mt-4">Salvar</MudButton>
-</MudPaper>
