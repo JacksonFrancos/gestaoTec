@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using commo.Commons.Results;
+using commo.DTOs;
 using WebUi.Services.Interface;
 
 namespace WebUi.Services.Impl
@@ -31,15 +32,4 @@ namespace WebUi.Services.Impl
             );
         }
     }
-
-
-    public record ClientDTO(
-        string Name,
-        string Address,
-        string Email,
-        int Number,
-        Guid ClientId
-    );
-
-    
 }
