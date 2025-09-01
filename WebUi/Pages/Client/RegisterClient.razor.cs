@@ -6,7 +6,7 @@ using WebUi.Services.Interface;
 
 namespace WebUi.Pages.Client
 {
-    public partial class CreateBase : ComponentBase
+    public partial class Createclient : ComponentBase
     {
         [Inject] protected IClientService ClientService { get; set; } = default!;
         [Inject] protected ISnackbar Snackbar { get; set; } = default!;

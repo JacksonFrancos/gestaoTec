@@ -1,6 +1,6 @@
 ﻿@page "/clients/create"
-@inherits CreateBase
 @inject HttpClient Http
+@inherits Createclient
 @using MudBlazor
 @using System.ComponentModel.DataAnnotations
 @using WebUi.Services.Interface
@@ -9,25 +9,17 @@
 <MudGrid>
     <MudPaper Class="pa-4">
         <MudForm>
-            <MudTextField T="string" Label="Name" Required="true" RequiredError="User name is required!" />
-            <MudTextField T="string" Label="Email" Required="true" RequiredError="Email is required!"
-                          Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+            <MudTextField T="string" @bind-Value="Name" Label="Nome" Required="true" RequiredError="User name is required!" />
+
+            <MudTextField T="string" @bind-Value="Email" Label="Email" Required="true" RequiredError="Email is required!"
+                          Validation="@(new EmailAddressAttribute() { ErrorMessage = "The email address is invalid" })" />
+
             <MudTextField T="string" Label="Password" HelperText="Choose a strong password"
                           InputType="InputType.Password"
-                          RequiredError="Password is required!" />
-            <MudTextField T="string"
-                          Label="Password" HelperText="Repeat the password" InputType="InputType.Password"
-                           />
-            <div class="d-flex">
-                <MudRadioGroup T="string" Required="true" RequiredError="Account type is required!">
-                    <MudRadio Value="@("Personal")">Personal</MudRadio>
-                    <MudRadio Value="@("Professional")">Professional</MudRadio>
-                </MudRadioGroup>
-            </div>
-            <div class="d-flex align-center justify-space-between">
-                <MudCheckBox T="bool" Required="true" RequiredError="You must agree" Label="I agree!" />
-                <MudButton Variant="Variant.Filled" Color="Color.Primary"  Class="ml-auto">Register</MudButton>
-            </div>
+                          Required="true" RequiredError="Password is required!" />
+
+            <MudTextField T="string" Label="Repeat Password" HelperText="Repeat the password"
+                          InputType="InputType.Password" />
         </MudForm>
     </MudPaper>
 </MudGrid>
